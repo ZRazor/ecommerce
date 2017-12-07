@@ -108,7 +108,7 @@ class ProductCategoryManager extends BaseEntityManager implements ProductCategor
         $productMetadata = $this->getEntityManager()->getClassMetadata($metadata->getAssociationTargetClass('product'));
         $categoryMetadata = $this->getEntityManager()->getClassMetadata($metadata->getAssociationTargetClass('category'));
 
-        $sql = 'SELECT count(cnt.product_id) AS cntId
+        $sql = 'SELECT count(cnt.product_id) AS "cntId"
             FROM (
                 SELECT DISTINCT pc.product_id
                 FROM %s pc
